@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Contact Card</title>
+        <meta name="description" content="A Jquery assignment to create contact cards">
+        <link rel="stylesheet" type="text/css" href="ContactCard.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('#contact').submit(function(){
+                    $('#right').append('<div class = "card"><h2>' + $('#first_name').val() + ' ' + $('#last_name').val()
+                    + "</h2><p>click for this person's description</p></div>");
+                    return false;
+                });
+                $(document).on('click', '.card p', function(){
+                    $(this).hide('slow');
+                    var temp = $('.description').val();
+                    $(this).text('');
+                    $(this).append('<p>' + temp + '</p>');
+                    $(this).show('slow');
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id = "wrapper">
+            <div id = "left">
+                <h1>Fill out this form to add contacts</h3>
+                <form id = "contact">
+                    First name:<input type="text" id = 'first_name'>
+                    Last name:<input type="text" id = 'last_name'>
+                    Description:<textarea class="description"></textarea>
+                    <input type="submit" value="Add User!">
+                </form>
+            </div>
+            <div id = "right">
+                <h1>Contact List</h1>
+            </div>
+        </div>
+    </body>
+</html>
