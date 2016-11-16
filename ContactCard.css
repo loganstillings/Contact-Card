@@ -1,0 +1,21 @@
+#contact input, textarea{
+    display: block;
+}
+#left, #right{
+    display: inline-block;
+    width: 45%;
+    vertical-align: top;
+}
+#right{
+    background-color: blue;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+.card{
+    background-color: teal;
+    border-radius: 10px;
+    text-align: left;
+    padding: 10px;
+    margin-bottom: 10px;
+}
